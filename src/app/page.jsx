@@ -1,5 +1,5 @@
 import About from '@/components/About'
-import Blog from '@/components/Blog'
+// import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Main from '@/components/Main'
 import Storyteller from '@/components/Storyteller'
