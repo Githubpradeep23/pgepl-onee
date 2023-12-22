@@ -1,4 +1,3 @@
-
 "use client";
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,10 +9,10 @@ export default function about() {
 
    const visionMission = [
       {
-         title: "Our Vision", description: "At SLRIS, our vision is to be at the forefront of IT innovation, shaping a future where technology enhances every aspect of life and business."
+         title: "Our Vision", description: "At PGEPL, our vision is to be at the forefront of Bio Fuel, shaping a future where Bio-Diesel enhances every aspect of Fuel Economy"
       },
       {
-         title: "Our Mission", description: "Our mission is to deliver exceptional IT and engineering solutions that empower businesses to reach their full potential, overcome challenges, and embrace digital transformation."
+         title: "Our Mission", description: "Our mission is to deliver exceptional Bio Fuel As Service that empower businesses to reach their full potential, overcome challenges, and embrace digital transformation."
       },
       {
          title: "Our Impact", description: "The impact of our work is seen in the success of our clients. From improving efficiency to pioneering new solutions, our dedication to excellence has a positive ripple effect across industries and communities."
@@ -22,23 +21,23 @@ export default function about() {
 
    const portfolioSpectrum = [
       {
-         title: "Custom Software", imageUrl: "/assets/images/home-banner/custom-software.png", description: "Developing tailored software products to address unique business challenges and enhance efficiency."
+         title: "Bio Fuel Innovation", imageUrl: "/assets/images/home-banner/custom-software.jpg", description: "Discover the Future of Sustainable Energy with Bio Fuel Innovation. In a world where environmental concerns are at the forefront, the quest for eco-friendly energy sources has never been more crucial. Bio Fuel Innovation is paving the way for a cleaner and greener tomorrow by harnessing the power of renewable resources.."
       },
       {
-         title: "Expert Staffing", imageUrl: "/assets/images/home-banner/digital-serivces.png", description: `Providing skilled staffing solutions to support project needs and drive organizational success.`
+         title: "Supportive Suppliers(Oil Refinary)", imageUrl: "/assets/images/home-banner/digital-serivces.jpg", description: ` the dynamic landscape of the oil refining industry, the role of supportive suppliers cannot be overstated. These suppliers form the backbone of any successful oil refinery, providing essential materials, equipment, and services that contribute to the seamless operation of the entire process.`
       },
       {
-         title: "SAP Solutions", imageUrl: "/assets/images/home-banner/sap.png", description: `Leveraging advanced SAP tools for efficient business process management and analytics.`
+         title: "End to End Transportation", imageUrl: "/assets/images/home-banner/sap.jpg", description: `End-to-End Transportation solutions offer a range of features designed to streamline the logistics process. These include real-time tracking and visibility, allowing businesses to monitor the movement of their goods at every stage.`
       },
-      {
-         title: "Web Development", imageUrl: "/assets/images/home-banner/web-development.png", description: "Crafting innovative web applications for improved user experience and digital interaction."
-      },
-      {
-         title: "Digital Marketing", imageUrl: "/assets/images/home-banner/home-banner-1.png", description: `Implementing strategic digital marketing campaigns for impactful brand presence and customer engagement`
-      },
-      {
-         title: "EdTech Solutions", imageUrl: "/assets/images/home-banner/edtech.png", description: ` Offering cutting-edge educational technology solutions to transform learning experiences and educational outcomes.`
-      },
+      // {
+      //    title: "Web Development", imageUrl: "/assets/images/home-banner/web-development.png", description: "Crafting innovative web applications for improved user experience and digital interaction."
+      // },
+      // {
+      //    title: "Digital Marketing", imageUrl: "/assets/images/home-banner/home-banner-1.png", description: `Implementing strategic digital marketing campaigns for impactful brand presence and customer engagement`
+      // },
+      // {
+      //    title: "EdTech Solutions", imageUrl: "/assets/images/home-banner/edtech.png", description: ` Offering cutting-edge educational technology solutions to transform learning experiences and educational outcomes.`
+      // },
    ];
 
    return (
@@ -52,11 +51,11 @@ export default function about() {
 
                   <div className='md:ml-10'>
                      <div className='mt-20'>
-                        <h1 className='font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#75EAE4]'>
-                           {"Welcome to SLRIS,"}<br />
+                        <h1 className='font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#069c13]'>
+                           {"Welcome to PGEPL,"}<br />
                         </h1>
 
-                        <TypeAnimation className="text-3xl sm:text-2xl md:text-3xl font-[Raleway] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#75EAE4]"
+                        <TypeAnimation className="text-3xl sm:text-2xl md:text-3xl font-[Raleway] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#069c13]"
                            // Same String at the start will only be typed once, initially
                            sequence={[
                               500, // wait 1s before replacing "Mice" with "Hamsters"
@@ -74,7 +73,7 @@ export default function about() {
 
 
                      </div>
-                     <button type="button" className="md:ml-1 rounded-full hover:scale-105 ease-in duration-100 text-white items-start bg-[#152C4E] focus:ring-4 font-medium mb-2 capitalize dark:focus:ring-[#152C4E] px-6 py-2 text-[14px]">{"HIRE US ->"} </button>
+                     <button type="button" className="md:ml-1 rounded-full hover:scale-105 ease-in duration-100 text-white items-start bg-[#152C4E] focus:ring-4 font-medium mb-2 capitalize dark:focus:ring-[#152C4E] px-6 py-2 text-[14px]">{"JOIN US->"} </button>
 
                   </div>
 
@@ -86,7 +85,7 @@ export default function about() {
 
          <div className=''>
 
-            <div id='about' className={`h-auto `}>
+            {/* <div id='about' className={`h-auto `}>
                <div className=' max-w-6xl w-full mx-auto md:p-16 p-6 grid grid-cols-2 md:mt-1'>
                   <div className=''>
                      <h1 className='font-semibold text-left text-5xl text-[#152C4E] justify-center'>
@@ -106,29 +105,29 @@ export default function about() {
                <div className='flex justify-center'>
                   <Image width={"1000"} height={"1000"} src={"../../assets/images/strength.png"} className='md:mb-10 w-[500px] h-[300px]' alt='/' />
                </div>
-            </div>
+            </div> */}
 
 
-            <div id='about' className={`h-auto bg-gradient-to-r from-[#bafffc] from-15% via-[#dcfffd] via-20% to-[#cafffc] to-100% md:w-full my-10`} >
+            <div id='about' className={`h-auto `} >
 
                <div className='container mx-auto md:py-5 '>
 
-                  <div className='flex flex-row justify-center h-full items-center md:py-2'>
-                     <h1 className='font-semibold text-left text-4xl text-[#152C4E] justify-center'>
-                        {`Our Core Values:`}<br />{` The Foundation of SLRIS`}
+                  <div className='flex flex-row justify-center h-full items-center md:py-2 ml-40'>
+                     <h1 className='font-semibold text-left text-4xl text-[#1a2353] justify-center'>
+                        {`Our Core Values:The Foundation of PGEPL`}
                      </h1>
                      <div className=''>
-                        <Image width={"90"} height={"115"} src={"../../assets/images/arrow3.png"} className='object-cover' alt='/' />
+                        <Image width={"90"} height={"115"} src={"/assets/images/arrow3.png"} className='object-cover' alt='/' />
                      </div>
                   </div>
 
                   <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 md:ml-10'>
 
                      {visionMission && visionMission.map((list, index) => (
-                        <div key={index} className='hover:border-[#75EAE2] border-2 relative w-80 h-60 rounded-2xl text-white overflow-hidden cursor-pointer transition-all duration-50 card'>
+                        <div key={index} className='hover:border-[#409d4d] border-2 relative w-80 h-60 rounded-2xl text-white overflow-hidden cursor-pointer transition-all duration-50 card'>
                            <div className='absolute inset-0 w-full h-full flex justify-center items-center transition-all duration-100 delay-200 z-20 hover:opacity-0 hover:border-[#75EAE2] border-2 bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in'>
                               <div className='flex flex-col items-center justify-center my-4'>
-                                 <h3 className='font-semibold text-left text-4xl text-[#F05108] justify-center'>{list.title}</h3>
+                                 <h3 className='font-semibold text-left text-4xl text-[#409d4d] justify-center'>{list.title}</h3>
                               </div>
                            </div>
                            <div className='absolute inset-0 w-full h-full flex justify-center items-center transition-all z-10 card-back hover:border-[#75EAE2] border-2 bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in'>
@@ -143,13 +142,13 @@ export default function about() {
 
             </div>
 
-            <div id='about' className={`h-auto bg-gradient-to-r from-[#bafffc] from-15% via-[#cafffc] via-20% to-[#dcfffd] to-100% md:w-full py-8`} >
+            <div id='about' className={`h-auto `} >
                <div className='container mx-auto'>
 
                   <div className='max-w-[1240px] flex flex-row justify-center h-full'>
-                     <Image width={"1000"} height={"1000"} src={"../../assets/images/arrow4.png"} className='w-60 h-10 mt-8' alt='/' />
+                     <Image width={"1000"} height={"1000"} src={"/assets/images/arrow4.png"} className='w-60 h-10 mt-8' alt='/' />
                      <div className=' max-w-2xl'>
-                        <h1 className="font-bold md:text-4xl text-2xl text-[#152C4E] text-center mt-6 ">
+                        <h1 className="font-bold md:text-4xl text-2xl text-[#152C4E] text-center mt-6 mr-40 ">
                            {`Our Portfolio Spectrum`}
                         </h1>
                         <p className='text-center py-2 text-[#152C4E] text-md mb-8'>
@@ -160,9 +159,9 @@ export default function about() {
 
                   <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 '>
                      {portfolioSpectrum && portfolioSpectrum.map((list, index) => (
-                        <div key={index} className='bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 hover:border-[#75EAE2] border-2'>
+                        <div key={index} className='bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 hover:border-[#3b8838] border-2'>
                            <div className='m-auto'>
-                              <Image width={"1000"} height={"1000"} src={list.imageUrl} className='w-full md:h-36' alt='/' />
+                              <Image width={"1000"} height={"1000"} src={list.imageUrl} className='w-18 md:h-18' alt='/' />
                            </div>
                            <div className='flex flex-col items-center justify-center my-4'>
                               <h3>{list.title}</h3>
@@ -186,27 +185,27 @@ export default function about() {
                         Meet Our Expert
                      </h1>
                      <p className='text-center py-2 text-[#152C4E] text-md'>
-                        {`A Diverse Group of Visionaries and Innovators. Driven by Passion, Shaping the Future of Technology`}
+                        {`A Diverse Group of Visionaries and Innovators. Driven by Passion, Shaping the Future of Bio-Fuel`}
                      </p>
                   </div>
 
                   <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
 
-                     <div className='hover:border-[#75EAE2] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                         <div className='inset-0 h-auto z-0'>
                            <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-3.png"} className='w-full' alt='/' />
                            <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
                         </div>
                      </div>
 
-                     <div className='hover:border-[#75EAE2] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                         <div className='m-auto'>
                            <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-1.png"} className='w-full' alt='/' />
                            <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
                         </div>
                      </div>
 
-                     <div className='hover:border-[#75EAE2] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                         <div className='m-auto'>
                            <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-2.png"} className='w-full' alt='/' />
                            <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
@@ -217,7 +216,7 @@ export default function about() {
                </div>
             </div>
 
-            <div id='blog' className='max-w-[1200px] w-full p-2 py-10 mx-auto my-10'>
+            {/* <div id='blog' className='max-w-[1200px] w-full p-2 py-10 mx-auto my-10'>
 
                <div className='mx-auto md:max-w-6xl md:grid grid-cols-2 my-10 gap-10'>
 
@@ -233,9 +232,9 @@ export default function about() {
                   </div>
 
                </div>
-            </div>
+            </div> */}
 
-            <div id='about' className={`h-auto`} >
+            {/* <div id='about' className={`h-auto`} >
                <div className='w-full mx-auto md:p-16 p-6'>
                   <div className=''>
                      <h1 className='font-semibold text-center text-4xl text-[#152C4E]'>
@@ -243,18 +242,18 @@ export default function about() {
                         {"(You can be a part of it)"}
                      </h1>
                      <div className=' md:ml-60 md:-mt-4'>
-                        <Image width={"1000"} height={"1000"} src={"../../assets/images/arrow1.png"} className='w-20 h-28' alt='/' />
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/arrow1.png"} className='w-20 h-28' alt='/' />
                      </div>
                      <p className='md:max-w-2xl mx-auto md:py-2 py-2 text-gray-600 md:text-sm'>
-                        {`Experience a work environment that empowers and values you. At SLRIS, we recognize the significant role work plays in our lives, and we are committed to showing our appreciation for your dedication and contributions.`}
+                        {`Experience a work environment that empowers and values you. At PGEPL, we recognize the significant role work plays in our lives, and we are committed to showing our appreciation for your dedication and contributions.`}
                      </p>
                      <div className='flex justify-center'>
-                        <Image width={"1000"} height={"1000"} src={"../../assets/images/about-illus.png"} className='md:mt-5 w-[500px] h-[300px]' alt='/' />
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/about-illus.png"} className='md:mt-5 w-[500px] h-[300px]' alt='/' />
                      </div>
                   </div>
 
                </div>
-            </div>
+            </div> */}
 
             <div id='about' className={`h-auto  md:w-full mt-4`} >
                <div className='w-full mx-auto md:p-12 p-4'>
@@ -263,7 +262,7 @@ export default function about() {
                         {"Unveil Your Path to Success with Us"}
                      </h1>
                      <div className='flex justify-center float-right !mr-5'>
-                        <Image width={"1000"} height={"1000"} src={"../../assets/images/joinus.png"} className='md:mt-20 w-[120px] h-[210px]' alt='/' />
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/joinus.png"} className='md:mt-20 w-[120px] h-[210px]' alt='/' />
                      </div>
 
                      {/* <div className=''>
@@ -278,31 +277,31 @@ export default function about() {
                   <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
                   <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Exceptional Mastery:`} </b>
                      <span className='md:text-sm'>
-                        {` Launch your career with a premier IT company, celebrated for its 17 years of groundbreaking success in the industry.`}
+                        {` Launch your Bio Fuel Station & Be a success partner in the industry.`}
                      </span>
                   </p>
                </div>
-               <div className='flex'>
+               {/* <div className='flex'>
                   <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
                   <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Varied Industry Exposure:`} </b>
                      <span className='md:text-sm'>
                         {`Gain experience across multiple sectors, enriching your professional portfolio.`}
                      </span>
                   </p>
-               </div>
+               </div> */}
                <div className='flex'>
                   <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
                   <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Frontline of Innovation:`} </b>
                      <span className='md:text-sm'>
-                        {`Participate in creating and enhancing pioneering IT solutions.`}</span>
+                        {`Participate in creating and enhancing pioneering Bio Fuel solutions.`}</span>
                   </p>
                </div>
 
                <div className='flex'>
                   <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
-                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Personal and Professional Development:`} </b>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Professional Service:`} </b>
                      <span className='md:text-sm'>
-                        {`Benefit from an environment focused on continuous growth and skill enhancement.`}</span>
+                        {`Benefit from an environment focused on continuous growth.`}</span>
                   </p>
                </div>
 
@@ -318,7 +317,7 @@ export default function about() {
                   <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
                   <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Talent and Teamwork:`} </b>
                      <span className='md:text-sm'>
-                        {`Join a respected team known for its strategic staffing prowess and collaborative spirit.`}</span>
+                        {`Join a respected team known for its strategic and collaborative spirit.`}</span>
                   </p>
                </div>
 
