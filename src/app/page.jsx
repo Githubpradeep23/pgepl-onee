@@ -7,14 +7,14 @@ import AboutImg from '/public/assets/images/home-banner/mobile-about-2.png';
 import Testimonial from '@/components/Testimonial'
 import Brandss from '@/components/Brandss'
 
-export default async function Home() {
-   let apiUrl = process.env.NEXT_PUBLIC_API_URL;
+// export default async function Home() {
+//    let apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-   // const res = await fetch(`${apiUrl}/get/blogs`, { cache: 'no-store', method: 'GET' });
-   // if (!res.ok) {
-   //    // This will activate the closest `error.js` Error Boundary
-   //    throw new Error('Failed to fetch data')
-   }
+//    const res = await fetch(`${apiUrl}/get/blogs`, { cache: 'no-store', method: 'GET' });
+//    if (!res.ok) {
+//       // This will activate the closest `error.js` Error Boundary
+//       throw new Error('Failed to fetch data')
+//    }
    const blogsData = await res.json();
 
    return (
