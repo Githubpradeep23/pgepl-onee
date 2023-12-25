@@ -39,18 +39,25 @@ const page = () => {
                                             <input className='border-b-[1px] border-black flex focus:outline-none focus:border-teal-500' type='text' name='phone' />
                                         </div>
 
-                                        <div className='flex flex-col'>
+                                           <div className='flex flex-col'>
                                             <label className='uppercase text-sm'>
                                                 Phone Number
                                             </label>
-                                            <input className='border-b-[1px] border-black flex focus:outline-none focus:border-teal-500' type='text' name='phone' />
+                                            <input
+                                                className='border-b-[1px] border-black flex focus:outline-none focus:border-teal-500'
+                                                type='text'
+                                                name='phone'
+                                                maxLength='12'
+                                                onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')}
+                                            />
                                         </div>
 
                                     </div>
-
-                                    <button className='w-full p-2 text-xs capitalize text-gray-100 mt-4'>
-                                        Submit
-                                    </button>
+                                    <div className='flex flex-col items-center'>
+                                        <button className='w-32 p-2 text-xs capitalize text-gray-100 mt-4 mx-auto'>
+                                            Submit
+                                        </button>
+                                    </div>
 
                                 </form>
                             </div>
