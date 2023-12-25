@@ -1,338 +1,339 @@
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Main from '@/components/Main'
-import Storyteller from '@/components/Storyteller'
-import Image from 'next/image';
-import AboutImg from '/public/assets/images/home-banner/mobile-about-2.png';
-import Testimonial from '@/components/Testimonial'
-import Brandss from '@/components/Brandss'
+"use client";
+import Image from 'next/image'
+import Link from 'next/link'
+import { BsPlusCircleFill } from 'react-icons/bs';
+import { FaArrowRight, FaCheck } from "react-icons/fa6";
+import { TypeAnimation } from 'react-type-animation'
 
-export default async function Home() {
-   let apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export default function about() {
 
-   const res = await fetch(`${apiUrl}/get/blogs`, { cache: 'no-store', method: 'GET' });
-   if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch data')
-   }
-   const blogsData = await res.json();
+   const visionMission = [
+      {
+         title: "Our Vision", description: "At PGEPL, our vision is to be at the forefront of Bio Fuel, shaping a future where Bio-Diesel enhances every aspect of Fuel Economy"
+      },
+      {
+         title: "Our Mission", description: "Our mission is to deliver exceptional Bio Fuel As Service that empower businesses to reach their full potential, overcome challenges, and embrace digital transformation."
+      },
+      {
+         title: "Our Impact", description: "The impact of our work is seen in the success of our clients. From improving efficiency to pioneering new solutions, our dedication to excellence has a positive ripple effect across industries and communities."
+      },
+   ];
+
+   const portfolioSpectrum = [
+      {
+         title: "Bio Fuel Innovation", imageUrl: "/assets/images/home-banner/custom-software.jpg", description: "Discover the Future of Sustainable Energy with Bio Fuel Innovation. In a world where environmental concerns are at the forefront, the quest for eco-friendly energy sources has never been more crucial. Bio Fuel Innovation is paving the way for a cleaner and greener tomorrow by harnessing the power of renewable resources.."
+      },
+      {
+         title: "Supportive Suppliers(Oil Refinary)", imageUrl: "/assets/images/home-banner/digital-serivces.jpg", description: ` the dynamic landscape of the oil refining industry, the role of supportive suppliers cannot be overstated. These suppliers form the backbone of any successful oil refinery, providing essential materials, equipment, and services that contribute to the seamless operation of the entire process.`
+      },
+      {
+         title: "End to End Transportation", imageUrl: "/assets/images/home-banner/sap.jpg", description: `End-to-End Transportation solutions offer a range of features designed to streamline the logistics process. These include real-time tracking and visibility, allowing businesses to monitor the movement of their goods at every stage.`
+      },
+      // {
+      //    title: "Web Development", imageUrl: "/assets/images/home-banner/web-development.png", description: "Crafting innovative web applications for improved user experience and digital interaction."
+      // },
+      // {
+      //    title: "Digital Marketing", imageUrl: "/assets/images/home-banner/home-banner-1.png", description: `Implementing strategic digital marketing campaigns for impactful brand presence and customer engagement`
+      // },
+      // {
+      //    title: "EdTech Solutions", imageUrl: "/assets/images/home-banner/edtech.png", description: ` Offering cutting-edge educational technology solutions to transform learning experiences and educational outcomes.`
+      // },
+   ];
 
    return (
 
-      <> 
-         <Main
+      <>
+
+
+         <div id='home' className={`md:h-screen md:bg-about_us md:w-full h-[250px] bg-cover bg-center bg-no-repeat`} >
+            <div className='md:max-w-[1240px] w-full mx-auto md:p-16 p-6 flex justify-start items-center'>
+               <div className='md:mt-24 mt-8'>
+
+                  <div className='md:ml-10'>
+                     <div className='mt-20'>
+                        <h1 className='font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#069c13]'>
+                           {"Welcome to PGEPL,"}<br />
+                        </h1>
+
+                        <TypeAnimation className="text-3xl sm:text-2xl md:text-3xl font-[Raleway] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#152C4E] to-[#069c13]"
+                           // Same String at the start will only be typed once, initially
+                           sequence={[
+                              500, // wait 1s before replacing "Mice" with "Hamsters"
+                              'Where Expertise Meets',
+                              500,
+                              'Innovation',
+                           ]}
+                           wrapper="span"
+                           speed={50}
+                           cursor={true}
+                           // style={{ fontSize: '2em', display: 'inline-block' }}
+                           repeat={Infinity}
+                        />
+
+
+
+                     </div>
+                     <button type="button" className="md:ml-1 rounded-full hover:scale-105 ease-in duration-100 text-white items-start bg-[#152C4E] focus:ring-4 font-medium mb-2 capitalize dark:focus:ring-[#152C4E] px-6 py-2 text-[14px]">{"JOIN US->"} </button>
+
+                  </div>
+
+               </div>
+
+            </div>
+         </div>
          
-            // bannerBg={"hero_bg_image"}
-            bgTitle={"Since 5 Industry Years "}
-            // bgTitle1={"Years"}
-            // // bgTitle2={"Of Experience"}
-            // content={"Providing The Best Reliable Industry Solution"}
-            // type={1}
-            className={"md:h-screen md:bg-hero_bg_image md:w-full h-[250px] bg-cover bg-center bg-no-repeat bg-mobile_hero_bg_image"}
-            buttonContent={"Schedule a Call Now"}
-            
-         />
-         
 
-         <section className="mb-2 my-20">
-            <div className="container mx-auto">
+         <div className=''>
 
-                  <div className="flex flex-wrap">
-
-                     <div className="mx-auto max-w-[100%] text-center">
-                        <h2 className="font-bold md:text-4xl text-2xl text-[#202124] mb-[50px] text-left ml-8">How <span className='text-[#2f9842]'>We</span> differ?
-                        </h2>
-
-                        <div className='flex justify-center mb-4'>
-                           <Image src={"../../assets/images/4pillar.png"} width='250' height='300' alt='/' />
-                        </div>
-                     </div>
-
-                  <div className="grid grid-cols-4 justify-center m-auto">
-
-                     <div className="w-full px-4 ">
-                        <div className="mb-8 rounded-[200px] bg-white ">
-
-                           <div className='flex justify-center md:h-[110px]'>
-                              <div className="w-[180px] bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden hover:border-[#3f9c59] border-2">
-                                 <div className="p-4">
-                                    <div className='flex justify-center'>
-                                       <Image src={"../../assets/images/Icon1.png"} width='1000' height='1000' className='w-10' alt='/' />
-                                    </div>
-                                    <p className="text-[14px] p-2 text-center font-semibold">{"Customer Centric"}</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <p className="text-body-color text-xs mt-4 text-justify">
-                              We pride ourselves in customer success
-                              stories and drive to establish long term
-                              relationships. Our engagements
-                              typically lead us to become trusted
-                              advisors to our clients with 100%
-                              customer satisfaction.
-                           </p>
-                        </div>
-                     </div>
-
-                     <div className="w-full px-4">
-                        <div className="mb-8 rounded-[20px] bg-white">
-
-                           <div className='flex justify-center md:h-[110px]'>
-                              <div className="w-[180px] bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden hover:border-[#3f9c59] border-2">
-                                 <div className="p-4">
-                                    <div className='flex justify-center'>
-                                       <Image src={"../../assets/images/Icon2.png"} width='1000' height='1000' className='w-10' alt='/' />
-                                    </div>
-                                    <p className="text-[14px] p-2 text-center font-semibold">{"Risk Management"}</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <p className="text-body-color text-xs mt-4 text-justify">
-                              {` We perform quarterly independent
-                                 reviews of the solutions (Services and
-                                 products) we deliver along with the
-                                 health of project/services and
-                                 recommend mitigation plans.`}
-                           </p>
-                        </div>
-                     </div>
-
-                     <div className="w-full px-4">
-                        <div className="mb-8 rounded-[20px] bg-white">
-
-                           <div className='flex justify-center md:h-[110px]'>
-                              <div className="w-[180px] bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden hover:border-[#3f9c59] border-2">
-                                 <div className="p-4">
-                                    <div className='flex justify-center'>
-                                       <Image src={"../../assets/images/Icon3.png"}width='1000' height='1000' className='w-10' alt='/' />
-                                    </div>
-                                    <p className="text-[14px] p-2 text-center font-semibold">{"Experience"}</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <p className="text-body-color text-xs mt-4 text-justify">
-                              With deep industry knowledge
-                              experience in both products and
-                              services; we use a “Why NOT"
-                              approach to align with leading
-                              practices, processes, and system
-                              designs.
-                           </p>
-                        </div>
-                     </div>
-
-                     <div className="w-full px-4">
-                        <div className="mb-8 rounded-[20px] bg-white">
-
-                           <div className='flex justify-center md:h-[110px]'>
-                              <div className="w-[180px] bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden hover:border-[#3f9c59] border-2">
-                                 <div className="p-4">
-                                    <div className='flex justify-center'>
-                                       <Image src={"../../assets/images/Icon4.png"} width='1000' height='1000' className='w-8' alt='/' />
-                                    </div>
-                                    <p className="text-[14px] p-2 text-center font-semibold">{"Strategic Vision"}</p>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <p className="text-body-color text-xs mt-4 text-justify">
-                              We invest in solutions that are geared
-                              towards market trends, the latest
-                              technologies, and products. We bring in
-                              a balanced approach to look at current
-                              market trends and future releases of our products and services to align with the current requirements.
-                           </p>
-                        </div>
-                     </div>
-
-                  </div>
-               </div>
-
-            </div>
-         </section>
-
-         <section className="pt-2 lg:pt-[20px] lg:pb-[40px] my-20">
-            <div className="container">
-
-               <div className="md:grid grid-cols-3 gap-16">
-
-                  <div className="">
-                     <Image width={"1000"} height={"1000"} src={"../assets/images/home-banner/servicenew.png"} className='w-full object-cover' alt='/' />
-                  </div>
-
-                  <div className="md:col-span-2">
-                     <div className="-mx-4 flex flex-wrap">
-                        <div className="w-full px-4">
-
-                           <div className="mx-auto mb-2 max-w-[100%] text-center lg:mb-10 mt-2">
-                              <h2 className="font-bold md:text-[20px] text-[16px] leading-[44px] md:leading-[52px] md:text-heading-3 text-left ml-8 md:mb-[10px] lg:mb-[5px]">OUR SERVICES</h2>
-                              <h2 className="font-bold md:text-4xl text-2xl text-[#202124] mb-[50px] text-left ml-8">We Served as your wish for success
-                              </h2>
-                           </div>
-
-                        </div>
-                     </div>
-                     <div className="-mx-4 grid grid-cols-3 px-4">
-
-                        <div className="w-full px-4">
-                           <div className="mb-8 rounded-[20px] bg-white">
-                              <div className="bg-primary mb-1 flex h-[70px] w-[70px] items-center justify-center rounded-2xl">
-                                 <Image width={"1000"} height={"1000"} src={"../assets/images/servicen1.png"} className='object-cover w-32' alt='/' />
-                              </div>
-                              <h4 className="text-dark mb-3 text-sm font-semibold">
-                                 BioDiesel (B100)
-                              </h4>
-                              <p className="text-body-color text-xs">
-                              Power your journey sustainably with our Biodiesel (B100), a renewable biofuel that not only reduces carbon emissions but also ensures a cleaner, greener fueling solution
-                              </p>
-                              <div className="w-1/6 border border-[#75EAE2] border-b-4 border-l-0 border-r-0 border-t-0 mt-2">
-                              </div>
-                           </div>
-                        </div>
-
-                        <div className="w-full px-4">
-                           <div className="mb-8 rounded-[20px] bg-white">
-                              <div className="bg-primary mb-1 flex h-[70px] w-[70px] items-center justify-center rounded-2xl">
-                                 <Image width={"1000"} height={"1000"} src={"../assets/images/servicen2.png"} className='object-cover w-32' alt='/' />
-                              </div>
-                              <h4 className="text-dark mb-3 text-sm font-semibold">
-                                 Ethanol E100
-                              </h4>
-                              <p className="text-body-color text-xs">
-                              Embrace a greener fuel choice with our Ethanol (E100), a high-octane biofuel that not only delivers enhanced engine performance but also contributes to a more sustainable and eco-friendly energy future
-                              </p>
-                              <div className="w-1/6 border border-[#75EAE2] border-b-4 border-l-0 border-r-0 border-t-0 mt-2">
-                              </div>
-                           </div>
-                        </div>
-
-                        <div className="w-full px-4">
-                           <div className="mb-8 rounded-[20px] bg-white">
-                              <div className="bg-primary mb-1 flex h-[70px] w-[70px] items-center justify-center rounded-2xl">
-                                 <Image width={"1000"} height={"1000"} src={"../assets/images/servicen2.png"} className='object-cover w-32' alt='/' />
-                              </div>
-                              <h4 className="text-dark mb-3 text-sm font-semibold">
-                                 SUppliers (Oil Marketing)
-                              </h4>
-                              <p className="text-body-color text-xs">
-                              Rely on our trusted network of oil marketing suppliers, ensuring a seamless and reliable source for your energy needs. We prioritize quality and consistency to meet the demands of a dynamic market                              </p>
-                              <div className="w-1/6 border border-[#75EAE2] border-b-4 border-l-0 border-r-0 border-t-0 mt-2">
-                              </div>
-                           </div>
-                        </div>
-
+            {/* <div id='about' className={`h-auto `}>
+               <div className=' max-w-6xl w-full mx-auto md:p-16 p-6 grid grid-cols-2 md:mt-1'>
+                  <div className=''>
+                     <h1 className='font-semibold text-left text-5xl text-[#152C4E] justify-center'>
+                        {"Our Strength Lies"}<br />{"in Our Team."}
+                     </h1>
+                     <div className=' float-right !mr-20'>
+                        <Image width={"160"} height={"210"} src={"../../assets/images/arrow2.png"} className='object-cover' alt='/' />
                      </div>
                   </div>
 
-               </div>
-
-            </div>
-         </section>
-
-         <div id='about' className='mx-auto md:p-4 w-full bg-no-repeat bg-cover text-center md:bg-enabled_decks md:mt-5' >
-            <div className='max-w-[1240px] m-auto md:grid grid-cols-2 gap-8'>
-
-               <div>
-                  <div className='bg-mpbile_enabled_decks bg-no-repeat bg-cover px-2 md:my-2'>
-                     <div className='flex justify-between'>
-                        <h2 className="font-bold md:text-3xl text-2xl text-[#152C4E] text-left">Few Reasons Why People Choosing Us!</h2>
-                        {/* <Image width={"1000"} height={"1000"} className='md:w-32' src={"../assets/images/sap-partner.png"} /> */}
-                     </div>
-
-                     {/* <h2 className="font-bold md:text-1xl text-2xl text-[#152C4E] text-left">Automated Data Processing, Accelerated
-                        Automated Data Processing
-                     </h2> */}
-                     <p className='py-2 text-gray-600 text-left'>
-                        {`Environment Friendly Clean & Green Energy source. Self Reliance in Fuel and to save foreign currency (by decreasing Fossil Fuels including Crude from OPEC countries) Value Addition in farmers income by installing Biofuels at Farm level`}
-                     </p>
-                  </div>
-
-                  <div className='bg-mpbile_enabled_decks bg-no-repeat bg-cover px-2 md:my-5'>
-                     <div className='flex justify-between'>
-                        <h2 className="font-bold md:text-3xl text-2xl text-[#152C4E] text-left">Experienced Support</h2>
-                        {/* <Image width={"1000"} height={"1000"} className='md:w-32' src={"../assets/images/erp-solution.png"} /> */}
-                     </div>
-
-                     <h2 className="font-bold md:text-1xl text-2xl text-[#152C4E] text-left">Manufacturers (in Joint Venture)
-                     </h2>
-                     <p className='py-2 text-gray-600 text-left'>
-                        {`Rely on our seasoned team of experts for unparalleled guidance and support in navigating the sustainable energy landscape, as we drive innovation in the biofuel industry.`}
+                  <div className=''>
+                     <p className='max-w-[1000px] text-justify py-2 text-[#152C4E] font-bold text-sm md:mt-20'>
+                        {`At SLRIS, we're more than just a company – we're a family of innovative minds and dedicated professionals. Our success in providing top-notch IT and engineering services across diverse industries is fueled by our talented team.`}
                      </p>
                   </div>
                </div>
+               <div className='flex justify-center'>
+                  <Image width={"1000"} height={"1000"} src={"../../assets/images/strength.png"} className='md:mb-10 w-[500px] h-[300px]' alt='/' />
+               </div>
+            </div> */}
 
-               <div className='w-full h-auto -mt-20 m-auto flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
-                  <Image width={"1000"} height={"1000"} src={AboutImg} className='w-full' alt='/' />
+
+            <div id='about' className={`h-auto `} >
+
+               <div className='container mx-auto md:py-5 '>
+
+                  <div className='flex flex-row justify-center h-full items-center md:py-2 ml-40'>
+                     <h1 className='font-semibold text-left text-4xl text-[#1a2353] justify-center'>
+                        {`Our Core Values:The Foundation of PGEPL`}
+                     </h1>
+                     <div className=''>
+                        <Image width={"90"} height={"115"} src={"/assets/images/arrow3.png"} className='object-cover' alt='/' />
+                     </div>
+                  </div>
+
+                  <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 md:ml-10'>
+
+                     {visionMission && visionMission.map((list, index) => (
+                        <div key={index} className='hover:border-[#409d4d] border-2 relative w-80 h-60 rounded-2xl text-white overflow-hidden cursor-pointer transition-all duration-50 card'>
+                           <div className='absolute inset-0 w-full h-full flex justify-center items-center transition-all duration-100 delay-200 z-20 hover:opacity-0 hover:border-[#75EAE2] border-2 bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in'>
+                              <div className='flex flex-col items-center justify-center my-4'>
+                                 <h3 className='font-semibold text-left text-4xl text-[#409d4d] justify-center'>{list.title}</h3>
+                              </div>
+                           </div>
+                           <div className='absolute inset-0 w-full h-full flex justify-center items-center transition-all z-10 card-back hover:border-[#75EAE2] border-2 bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in'>
+                              <div className='flex flex-col items-center justify-center my-4'>
+                                 <p className='my-2 text-sm text-black'>{list.description}</p>
+                              </div>
+                           </div>
+                        </div>
+                     ))}
+                  </div>
+               </div>
+
+            </div>
+
+            <div id='about' className={`h-auto `} >
+               <div className='container mx-auto'>
+
+                  <div className='max-w-[1240px] flex flex-row justify-center h-full'>
+                     <Image width={"1000"} height={"1000"} src={"/assets/images/arrow4.png"} className='w-60 h-10 mt-8' alt='/' />
+                     <div className=' max-w-2xl'>
+                        <h1 className="font-bold md:text-4xl text-2xl text-[#152C4E] text-center mt-6 mr-40 ">
+                           {`Our Portfolio Spectrum`}
+                        </h1>
+                        <p className='text-center py-2 text-[#152C4E] text-md mb-8'>
+                           {`Each solution we provide is a reflection of our comprehensive skill set and dedication to innovative excellence.`}
+                        </p>
+                     </div>
+                  </div>
+
+                  <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 '>
+                     {portfolioSpectrum && portfolioSpectrum.map((list, index) => (
+                        <div key={index} className='bg-white p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 hover:border-[#3b8838] border-2'>
+                           <div className='m-auto'>
+                              <Image width={"1000"} height={"1000"} src={list.imageUrl} className='w-18 md:h-18' alt='/' />
+                           </div>
+                           <div className='flex flex-col items-center justify-center my-4'>
+                              <h3>{list.title}</h3>
+                              <p className='my-2 text-sm'>{list.description}</p>
+                           </div>
+                           {/* <Link href={`pages/blogs/${list.slug}`} className='flex text-sm'>Read<FaArrowRight className='mt-1 ml-2' /></Link> */}
+                        </div>
+                     ))
+                     }
+
+                  </div>
+
                </div>
             </div>
+
+            <div  className='max-w-[1200px] w-full p-2 py-10 mx-auto my-10 '>
+               <div className='max-w-[1000px] mx-auto flex flex-col justify-center h-full'>
+
+                  <div className='items-center md:mb-10'>
+                     <h1 className="font-bold md:text-4xl text-2xl text-[#152C4E] text-center">
+                        Meet Our Expert
+                     </h1>
+                     <p className='text-center py-2 text-[#152C4E] text-md'>
+                        {`A Diverse Group of Visionaries and Innovators. Driven by Passion, Shaping the Future of Bio-Fuel`}
+                     </p>
+                  </div>
+
+                  <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='inset-0 h-auto z-0'>
+                           <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-3.png"} className='w-full' alt='/' />
+                           <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
+                        </div>
+                     </div>
+
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='m-auto'>
+                           <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-1.png"} className='w-full' alt='/' />
+                           <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
+                        </div>
+                     </div>
+
+                     <div className='hover:border-[#3b8838] border-2 p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='m-auto'>
+                           <Image width={"1000"} height={"1000"} src={"../../assets/images/home-banner/blog-2.png"} className='w-full' alt='/' />
+                           <h3 className='md:text-sm text-center'>{"Bessie Cooper"}</h3>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+
+            {/* <div id='blog' className='max-w-[1200px] w-full p-2 py-10 mx-auto my-10'>
+
+               <div className='mx-auto md:max-w-6xl md:grid grid-cols-2 my-10 gap-10'>
+
+                  <div className='mt-12'>
+                     <h2 className="font-bold md:text-2xl text-2xl text-black text-left py-4">{"SLRIS Team: Where Work Meets Fun."}</h2>
+                     <p className='mx-auto md:py-2 py-2 text-gray-600 md:text-sm text-left'>
+                        {`Our team deeply values both hard work and good times. This was exemplified in our all-company retreat, a perfect blend of productive sessions, collaborative projects, and fostering stronger connections among colleagues.`}
+                     </p>
+                  </div>
+
+                  <div className="aspect-w-16 aspect-h-9 hover:border-[#75EAE2] border-2">
+                     <iframe className='w-full h-64 rounded-lg' src="https://www.youtube.com/embed/lC76FtLeDy0?si=kvYzCYJuEn9n1kw_" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+
+               </div>
+            </div> */}
+
+            {/* <div id='about' className={`h-auto`} >
+               <div className='w-full mx-auto md:p-16 p-6'>
+                  <div className=''>
+                     <h1 className='font-semibold text-center text-4xl text-[#152C4E]'>
+                        {"United in Purpose, United as a Team."}<br />
+                        {"(You can be a part of it)"}
+                     </h1>
+                     <div className=' md:ml-60 md:-mt-4'>
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/arrow1.png"} className='w-20 h-28' alt='/' />
+                     </div>
+                     <p className='md:max-w-2xl mx-auto md:py-2 py-2 text-gray-600 md:text-sm'>
+                        {`Experience a work environment that empowers and values you. At PGEPL, we recognize the significant role work plays in our lives, and we are committed to showing our appreciation for your dedication and contributions.`}
+                     </p>
+                     <div className='flex justify-center'>
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/about-illus.png"} className='md:mt-5 w-[500px] h-[300px]' alt='/' />
+                     </div>
+                  </div>
+
+               </div>
+            </div> */}
+
+            <div id='about' className={`h-auto  md:w-full mt-4`} >
+               <div className='w-full mx-auto md:p-12 p-4'>
+                  <div className=''>
+                     <h1 className='font-semibold text-center text-4xl text-[#152C4E]'>
+                        {"Unveil Your Path to Success with Us"}
+                     </h1>
+                     <div className='flex justify-center float-right !mr-5'>
+                        <Image width={"1000"} height={"1000"} src={"/assets/images/joinus.png"} className='md:mt-20 w-[120px] h-[210px]' alt='/' />
+                     </div>
+
+                     {/* <div className=''>
+                        <Image width={"90"} height={"115"} src={"../../assets/images/arrow5.png"} className='object-cover' alt='/' />
+                     </div> */}
+                  </div>
+               </div>
+            </div>
+
+            <div className="md:p-4 md:ml-4 mb-1 bg-gradient-to-r from-[#dcfffd] from-15% via-[#cafffc] via-20% to-[#bafffc] to-100%">
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Exceptional Mastery:`} </b>
+                     <span className='md:text-sm'>
+                        {` Launch your Bio Fuel Station & Be a success partner in the industry.`}
+                     </span>
+                  </p>
+               </div>
+               {/* <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Varied Industry Exposure:`} </b>
+                     <span className='md:text-sm'>
+                        {`Gain experience across multiple sectors, enriching your professional portfolio.`}
+                     </span>
+                  </p>
+               </div> */}
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Frontline of Innovation:`} </b>
+                     <span className='md:text-sm'>
+                        {`Participate in creating and enhancing pioneering Bio Fuel solutions.`}</span>
+                  </p>
+               </div>
+
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Professional Service:`} </b>
+                     <span className='md:text-sm'>
+                        {`Benefit from an environment focused on continuous growth.`}</span>
+                  </p>
+               </div>
+
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Global Reach and Impact:`} </b>
+                     <span className='md:text-sm'>
+                        {`Contribute to significant, worldwide projects with our extensive onshore/offshore operations.`}</span>
+                  </p>
+               </div>
+
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Talent and Teamwork:`} </b>
+                     <span className='md:text-sm'>
+                        {`Join a respected team known for its strategic and collaborative spirit.`}</span>
+                  </p>
+               </div>
+
+               <div className='flex'>
+                  <span className='mt-3'><FaCheck className='bg-[#75EAE4] text-[#75EAE4] rounded-full md:w-2 md:h-2' /></span>
+                  <p className="text-[12px] md:text-[16px] p-1 text-justify"><b>{`Culture of Achievement:`} </b>
+                     <span className='md:text-sm'>
+                        {`Be part of a culture that celebrates success and strives for excellence at every level.`}</span>
+                  </p>
+               </div>
+
+            </div>
+
          </div>
 
-         <div className='mx-auto md:max-w-6xl container'>
-            <div className='md:grid grid-cols-2 md:my-20'>
-               <div className="rounded-lg">
-                  <Image width={"1000"} height={"1000"} src={"../../assets/images/sapsolution-circule.jpg"} className='' alt='/' />
-               </div>
-
-               <div className='mb-8 px-12'>
-                  <div className='content-start md:mt-24'>
-                     <h2 className="font-bold md:text-2xl text-2xl text-black text-left py-4">{"Streamline your Workload"}</h2>
-                     <p className='md:py-2 py-2 text-gray-600 text-justify md:text-sm'>
-                        {`We at Priyanka Green Energy (P) Ltd. Are Manufacturers (in Joint Venture) and Suppliers (Oil Marketing) of Biofuels viz. Biodiesel (B100) and Ethanol (E100) at various locations of India. We are DPIIT recognised start-up and involved in various verticals of Fuel and Energy business across country since it’s inception.`}
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div className='mx-auto md:max-w-6xl container'>
-            <div className='md:grid grid-cols-2 md:my-20'>
-
-               <div className='mb-8 px-12'>
-                  <div className='content-start md:mt-4'>
-                     <h2 className="font-bold md:text-2xl text-2xl text-black text-left py-4">{"Consulting Services"}</h2>
-                     <p className='md:py-2 py-2 text-gray-600 text-justify md:text-sm'>
-                        {`Great Businesses set the vision for a better future and the right innovation partner will get you there. We are the experts with  Technology and can collaborate with your business experts to develop a successful project plan. We help build the roadmap out a Business Strategy by analyzing their current state and help make decisions regarding their needs and decision making. We will be available 24/7 if you want to try us to make that difference.`}
-                     </p>
-                  </div>
-               </div>
-
-               <div className="rounded-lg">
-                  <Image width={"1000"} height={"1000"} src={"../../assets/images/consultant.jpg"} className='' alt='/' />
-               </div>
-
-            </div>
-         </div>
-
-         {/* <div className='mx-auto md:max-w-6xl container'>
-            <div className='md:grid grid-cols-2 md:my-20'>
-
-               <div className="rounded-lg flex justify-center">
-                  <Image width={"1000"} height={"1000"} src={"../../assets/images/stremming.png"} className='md:w-[400px]' alt='/' />
-               </div>
-
-               <div className='mb-8 px-12'>
-                  <div className='content-start md:mt-4'>
-                     <h2 className="font-bold md:text-2xl text-2xl text-black text-left py-4">{"Streamline School Management with SLRIS Edumatic"}</h2>
-                     <p className='md:py-2 py-2 text-gray-600 text-justify md:text-sm'>
-                        {`Discover SLRIS Edumatic's comprehensive suite of education management solutions,
-designed to enhance school operations and elevate the learning experience. Our Learning
-Management System (LMS) introduces interactivity and engagement to education, while our
-robust Assessment tools provide real-time insights into student performance, empowering
-informed decision-making.`}
-                     </p>
-                  </div>
-               </div>
-
-            </div>
-         </div> */}
-
-         <Testimonial />
-         <Brandss />
-         {/* <Storyteller /> */}
-         {/* <Contact /> */}
       </>
 
    )
+}
